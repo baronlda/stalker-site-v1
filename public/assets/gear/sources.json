@@ -1,0 +1,42 @@
+[
+  {
+    "id": "akm",
+    "page": "https://www.gamerguides.com/stalker-2-heart-of-chornobyl/database/weapons/assault-rifles/akm-74s",
+    "image": "https://www.gamerguides.com/assets/media/15/237792/t_inv_w_ak74_body-c4ed1559.png"
+  },
+  {
+    "id": "viper",
+    "page": "https://www.gamerguides.com/stalker-2-heart-of-chornobyl/database/weapons/smgs/viper-5",
+    "image": "https://www.gamerguides.com/assets/media/15/237819/t_inv_w_viper_body-6f92fbe3.png"
+  },
+  {
+    "id": "seva",
+    "page": "https://www.gamerguides.com/stalker-2-heart-of-chornobyl/database/armor/armor/seva-suit",
+    "image": "https://www.gamerguides.com/assets/media/15/237973/t_ifi_seva_neutral_armor-4d1d199c.png"
+  },
+  {
+    "id": "sunrise",
+    "page": "https://www.gamerguides.com/stalker-2-heart-of-chornobyl/database/armor/armor/sunrise-suit",
+    "image": "https://www.gamerguides.com/assets/media/15/237977/t_ifi_fol_sta_03-d9a62fed.png"
+  },
+  {
+    "id": "bear",
+    "page": "https://www.gamerguides.com/stalker-2-heart-of-chornobyl/database/detectors/anomaly-detectors/bear-detector",
+    "image": "https://www.gamerguides.com/assets/media/15/247651/t_dev_bear-d79dbf64.png"
+  },
+  {
+    "id": "veles",
+    "page": "https://www.gamerguides.com/stalker-2-heart-of-chornobyl/database/detectors/anomaly-detectors/veles-detector",
+    "image": "https://www.gamerguides.com/assets/media/15/247652/t_dev_detector_veles-9ff03c49.png"
+  },
+  {
+    "id": "moonlight",
+    "page": "https://www.gamerguides.com/stalker-2-heart-of-chornobyl/database/artifacts/electro/moonlight",
+    "image": "https://www.gamerguides.com/assets/media/15/238609/moonlight-dadf9183.png"
+  },
+  {
+    "id": "sparkler",
+    "page": "https://www.gamerguides.com/stalker-2-heart-of-chornobyl/database/artifacts/electro/sparkler",
+    "image": "https://www.gamerguides.com/assets/media/15/238613/sparkler-a2614bb4.png"
+  }
+]
