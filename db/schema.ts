@@ -1,0 +1,11 @@
+import {sqliteTable,text,integer,primaryKey,uniqueIndex,index} from 'drizzle-orm/sqlite-core';
+import {sql} from 'drizzle-orm';
+export const users=sqliteTable('users',{id:text().primaryKey(),email:text().notNull().unique(),name:text().notNull().unique(),password:text().notNull(),salt:text().notNull(),avatar:text().notNull().default('preset:0'),balance:integer().notNull().default(650),created:integer().notNull()});
+export const sessions=sqliteTable('sessions',{token:text().primaryKey(),user_id:text().notNull(),expires:integer().notNull()},t=>[index('sessions_user').on(t.user_id)]);
+export const posts=sqliteTable('posts',{id:integer().primaryKey({autoIncrement:true}),user_id:text().notNull(),kind:text().notNull(),board:text().notNull(),title:text().notNull(),body:text().notNull(),created:integer().notNull()});
+export const replies=sqliteTable('replies',{id:integer().primaryKey({autoIncrement:true}),user_id:text().notNull(),thread:text().notNull(),body:text().notNull(),created:integer().notNull()});
+export const messages=sqliteTable('messages',{id:integer().primaryKey({autoIncrement:true}),user_id:text().notNull(),body:text().notNull(),created:integer().notNull()});
+export const media=sqliteTable('media',{id:text().primaryKey(),user_id:text().notNull(),mime:text().notNull(),created:integer().notNull()});
+export const inventory=sqliteTable('inventory',{user_id:text().notNull(),item_id:text().notNull(),slot:text()},t=>[primaryKey({columns:[t.user_id,t.item_id]}),uniqueIndex('inventory_slot').on(t.user_id,t.slot).where(sql`${t.slot} IS NOT NULL`)]);
+export const limits=sqliteTable('limits',{key:text().primaryKey(),count:integer().notNull(),expires:integer().notNull()});
+export const rewards=sqliteTable('rewards',{user_id:text().notNull(),day:text().notNull(),kind:text().notNull(),count:integer().notNull()},t=>[primaryKey({columns:[t.user_id,t.day,t.kind]})]);

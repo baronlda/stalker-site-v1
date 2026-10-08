@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import {createRequire} from 'node:module';
+const {generateSQLiteDrizzleJson,generateSQLiteMigration}=createRequire(import.meta.url)('drizzle-kit/api');
+import * as schema from './schema.js';
+if(fs.existsSync('drizzle/0000_community.sql'))throw new Error('Initial migration already exists. Generate an appended migration for subsequent schema changes.');
+const previous=await generateSQLiteDrizzleJson({});
+const current=await generateSQLiteDrizzleJson(schema,previous.id);
+const statements=await generateSQLiteMigration(previous,current);
+fs.mkdirSync('drizzle/meta',{recursive:true});
+fs.writeFileSync('drizzle/0000_community.sql',statements.join('\n--> statement-breakpoint\n'));
+fs.writeFileSync('drizzle/meta/0000_snapshot.json',JSON.stringify(current,null,2));
+fs.writeFileSync('drizzle/meta/_journal.json',JSON.stringify({version:'7',dialect:'sqlite',entries:[{idx:0,version:'6',when:1790000000000,tag:'0000_community',breakpoints:true}]},null,2));
+console.log('Generated '+statements.length+' schema statements.');
