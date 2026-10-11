@@ -2,7 +2,7 @@
 
 A Ukrainian and English fan community portal inspired by the atmosphere of S.T.A.L.K.E.R. A portfolio project combining an illustrated interface with accounts, community publishing and a game-inspired inventory.
 
-**[Open the live website](https://stalker-fan-club.yanickson69.chatgpt.site/)**
+**[Open the portfolio demo](https://baronlda.github.io/stalker-site-v1/)**
 
 Український фан-портал: новини Зони, форум, чат, галерея та спорядження сталкера. Основна мова — українська; також доступна англійська.
 
@@ -27,9 +27,15 @@ A Ukrainian and English fan community portal inspired by the atmosphere of S.T.A
 | Database | Cloudflare D1, Drizzle schema and SQL migrations |
 | Image storage | Cloudflare R2 |
 | Build | Node.js file-based build script |
-| Live hosting | Sites |
+| Portfolio hosting | GitHub Pages |
 
-## Build
+## Portfolio demo
+
+The GitHub Pages version is a standalone demo. Browse the design, switch languages and try the equipment shop with a demo balance. Purchases reset when you reload the page. Registration, shared chat and server publishing are disabled; no credentials are requested.
+
+Build the demo with `node build-pages.mjs`. Its static files are written to `dist/pages`. GitHub Actions publishes this folder automatically from the main branch.
+
+## Full application build
 
 With a recent Node.js LTS release and npm installed:
 
@@ -72,3 +78,4 @@ S.T.A.L.K.E.R. and associated game materials belong to GSC Game World. This is a
 ```sh
 git clone stalker-site-v1.bundle stalker-site-backup
 ```
+
